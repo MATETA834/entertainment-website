@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Services | HTM Entertainment</title>
+
+    <meta name="description" content="Explore HTM Entertainment's services in music, singing, acting, filmmaking, comedy, artist promotion, creative entertainment, and sports in Kigali, Rwanda.">
+
+    <style>
+        :root {
+            --purple: #351052;
+            --deep-purple: #501792;
+            --gold: #b8a923;
+            --light: #f4f6fb;
+            --white: #ffffff;
+            --text: #25213a;
+            --muted: #6c6879;
+            --border: #e8e1f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.75;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        /* HEADER */
+
+        header {
+            background: var(--purple);
+            color: var(--white);
+            padding: 16px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px #0002;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--gold);
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--white);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gold);
+        }
+
+        .menu-toggle {
+            display: none;
+            border: 1px solid #ffffff70;
+            color: var(--white);
+            background: transparent;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        /* BUTTONS */
+
+        .btn {
+            display: inline-block;
+            padding: 12px 23px;
+            border: 2px solid var(--gold);
+            border-radius: 7px;
+            background: var(--gold);
+            color: var(--purple);
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border-color: #ffffff90;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--purple);
+            border-color: var(--white);
+        }
+
+        /* HERO */
+
+        .hero {
+            background:
+                radial-gradient(circle at 85% 15%, #7029a355, transparent 35%),
+                linear-gradient(135deg, #241035, var(--deep-purple));
+            color: var(--white);
+            text-align: center;
+            padding: 85px 7% 90px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            color: var(--gold);
+            border: 1px solid #b8a92390;
+            border-radius: 30px;
+            padding: 5px 15px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-size: clamp(34px, 5vw, 58px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            max-width: 780px;
+            margin: 0 auto 28px;
+            color: #eee7f7;
+            font-size: 16px;
+        }
+
+        /* GENERAL SECTIONS */
+
+        .section {
+            padding: 70px 7%;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 42px;
+        }
+
+        .eyebrow {
+            color: var(--deep-purple);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .section-heading h2 {
+            color: var(--purple);
+            font-size: clamp(27px, 4vw, 39px);
+            line-height: 1.3;
+            margin: 9px 0 14px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        /* INTRODUCTION */
+
+        .intro {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .intro h2 {
+            color: var(--purple);
+            font-size: 33px;
+            line-height: 1.3;
+            margin: 10px 0 18px;
+        }
+
+        .intro p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .intro-panel {
+            background: linear-gradient(145deg, var(--purple), var(--deep-purple));
+            color: var(--white);
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px #35105220;
+        }
+
+        .intro-panel h3 {
+            color: var(--gold);
+            font-size: 23px;
+            margin-bottom: 15px;
+        }
+
+        .intro-panel ul {
+            list-style: none;
+        }
+
+        .intro-panel li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ffffff20;
+        }
+
+        .intro-panel li:last-child {
+            border-bottom: none;
+        }
+
+        .intro-panel li::before {
+            content: "✓";
+            color: var(--gold);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* SERVICE NAVIGATION */
+
+        .service-navigation {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .service-navigation a {
+            color: var(--purple);
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            padding: 8px 16px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .service-navigation a:hover {
+            color: var(--white);
+            background: var(--deep-purple);
+        }
+
+        /* DETAILED SERVICES */
+
+        .services-section {
+            background: var(--white);
+        }
+
+        .service-list {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .service-detail {
+            display: grid;
+            grid-template-columns: 90px minmax(0, 1fr);
+            gap: 25px;
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: var(--light);
+            transition: box-shadow 0.3s, transform 0.3s;
+            scroll-margin-top: 100px;
+        }
+
+        .service-detail:hover {
+            box-shadow: 0 12px 30px #35105210;
+            transform: translateY(-3px);
+        }
+
+        .service-icon {
+            width: 75px;
+            height: 75px;
+            display: grid;
+            place-items: center;
+            border-radius: 17px;
+            background: #eee4f7;
+            font-size: 37px;
+        }
+
+        .service-content h3 {
+            color: var(--purple);
+            font-size: 25px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .service-content > p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .service-content h4 {
+            color: var(--deep-purple);
+            font-size: 15px;
+            margin: 18px 0 8px;
+        }
+
+        .service-content ul {
+            padding-left: 22px;
+            color: var(--muted);
+        }
+
+        .service-content li {
+            margin-bottom: 5px;
+        }
+
+        .service-note {
+            margin-top: 17px;
+            padding: 12px 15px;
+            background: #eee7f5;
+            border-left: 4px solid var(--gold);
+            border-radius: 5px;
+            color: var(--purple);
+            font-size: 14px;
+        }
+
+        /* WORKING PROCESS */
+
+        .process-section {
+            background: #eee7f5;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .process-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 13px;
+            text-align: center;
+        }
+
+        .process-number {
+            width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            margin: 0 auto 15px;
+            background: var(--purple);
+            color: var(--gold);
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .process-card h3 {
+            color: var(--purple);
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .process-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* WHO WE WORK WITH */
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .audience-card {
+            padding: 25px;
+            text-align: center;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .audience-card .emoji {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .audience-card h3 {
+            color: var(--purple);
+            margin-bottom: 8px;
+        }
+
+        .audience-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* FAQ */
+
+        .faq-section {
+            background: var(--white);
+        }
+
+        .faq-list {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-question {
+            width: 100%;
+            border: none;
+            background: transparent;
+            padding: 20px 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            text-align: left;
+            color: var(--purple);
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .faq-question span:last-child {
+            color: var(--deep-purple);
+            font-size: 23px;
+        }
+
+        .faq-answer {
+            padding: 0 5px 20px;
+            color: var(--muted);
+            display: none;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        /* CONTACT CTA */
+
+        .cta {
+            background: linear-gradient(120deg, var(--purple), var(--deep-purple));
+            text-align: center;
+            padding: 70px 7%;
+            color: var(--white);
+        }
+
+        .cta h2 {
+            font-size: clamp(28px, 4vw, 39px);
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: #eee7f7;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #241035;
+            color: #d9cfe5;
+            padding: 45px 7% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 35px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-column h3 {
+            color: var(--gold);
+            margin-bottom: 13px;
+        }
+
+        .footer-column p,
+        .footer-column a {
+            font-size: 14px;
+        }
+
+        .footer-column p {
+            margin-bottom: 8px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #d9cfe5;
+            margin-bottom: 8px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #ffffff20;
+            text-align: center;
+            margin-top: 35px;
+            padding-top: 20px;
+            font-size: 13px;
+        }
+
+        /* BACK TO TOP */
+
+        #backToTop {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: none;
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 50%;
+            background: var(--gold);
+            color: var(--purple);
+            font-size: 23px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 900;
+        }
+
+        #backToTop:hover {
+            background: var(--deep-purple);
+            color: var(--white);
+        }
+
+        /* SCROLL ANIMATIONS */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.55s ease, transform 0.55s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 950px) {
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .audience-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 720px) {
+            header {
+                padding: 14px 5%;
+            }
+
+            .logo {
+                font-size: 19px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 11px 4px;
+                border-top: 1px solid #ffffff20;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 65px 5%;
+            }
+
+            .section {
+                padding: 50px 5%;
+            }
+
+            .intro {
+                grid-template-columns: 1fr;
+            }
+
+            .intro h2 {
+                font-size: 28px;
+            }
+
+            .service-detail {
+                grid-template-columns: 1fr;
+                padding: 22px;
+                gap: 15px;
+            }
+
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+            }
+
+            .service-content h3 {
+                font-size: 22px;
+            }
+
+            .process-grid,
+            .audience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <a href="correct.html" class="logo">
+            HTM <span>Entertainment</span>
+        </a>
+
+        <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="navLinks"
+        >
+            ☰
+        </button>
+        <nav class="nav-links" id="navLinks" aria-label="Main navigation"></nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-label">Our Services</div>
+
+            <h1>
+                Bringing <span>Talent</span> to the Spotlight
+            </h1>
+
+            <p>
+                HTM Entertainment celebrates creativity and talent across
+                music, acting, filmmaking, comedy, the arts, and sports.
+                Explore our areas of interest and discover how we aim to
+                support entertainers, performers, and sports players.
+            </p>
+
+            <a href="#all-services" class="btn">Explore Our Services</a>
+
+            <a href="contact.html" class="btn btn-outline">
+                Contact Our Team
+            </a>
+        </section>
+
+        <!-- INTRODUCTION -->
+        <section class="section">
+            <div class="intro">
+
+                <div class="reveal">
+                    <span class="eyebrow">How We Help</span>
+
+                    <h2>Entertainment, Creativity and Opportunities</h2>
+
+                    <p>
+                        HTM Entertainment is an entertainment company based
+                        in Kigali City, Rwanda. We focus on bringing attention
+                        to talent in different creative and sporting fields.
+                    </p>
+
+                    <p>
+                        Whether you are a singer developing your musical
+                        journey, an actor interested in film, a comedian
+                        entertaining audiences, an artist expressing
+                        creativity, or a sports player pursuing your goals,
+                        our aim is to help you explore opportunities to
+                        showcase your abilities.
+                    </p>
+
+                    <p>
+                        Our services and collaborations can be discussed
+                        according to the needs of each person or project.
+                        Contact us to explain your goals and learn whether
+                        we can work together.
+                    </p>
+
+                    <a href="contact.html" class="btn">
+                        Discuss Your Project
+                    </a>
+                </div>
+
+                <aside class="intro-panel reveal">
+                    <h3>Our Main Areas</h3>
+
+                    <ul>
+                        <li>Music and singing</li>
+                        <li>Acting and filmmaking</li>
+                        <li>Comedy and live performance</li>
+                        <li>Artist and creative talent promotion</li>
+                        <li>Sports and player promotion</li>
+                        <li>Entertainment projects and collaborations</li>
+                    </ul>
+                </aside>
+
+            </div>
+        </section>
+
+        <!-- SERVICE QUICK LINKS -->
+        <section class="section" style="padding-top:0;">
+            <div class="section-heading reveal">
+                <span class="eyebrow">Explore by Interest</span>
+                <h2>Find the Service You Need</h2>
+                <p>
+                    Choose an area below to learn more about the people
+                    and projects it may support.
+                </p>
+            </div>
+
+            <nav class="service-navigation" aria-label="Service categories">
+                <a href="#music">Music & Singing</a>
+                <a href="#acting">Acting & Movies</a>
+                <a href="#comedy">Comedy</a>
+                <a href="#artists">Artists</a>
+                <a href="#sports">Sports Players</a>
+                <a href="#promotion">Talent Promotion</a>
+                <a href="#events">Entertainment Projects</a>
+            </nav>
+        </section>
+
+        <!-- DETAILED SERVICES -->
+        <section class="section services-section" id="all-services">
+
+            <div class="section-heading reveal">
+                <span class="eyebrow">What We Provide</span>
+                <h2>Our Services in Detail</h2>
+                <p>
+                    Learn about our entertainment fields, the people
+                    involved, and the kinds of projects you can discuss
+                    with HTM Entertainment.
+                </p>
+            </div>
+
+            <div class="service-list">
+
+                <!-- MUSIC -->
+                <article class="service-detail reveal" id="music">
+                    <div class="service-icon" aria-hidden="true">🎤</div>
+
+                    <div class="service-content">
+                        <h3>1. Music and Singing</h3>
+
+                        <p>
+                            Music is a powerful way to express emotions,
+                            tell stories, and connect with people. HTM
+                            Entertainment welcomes interest from singers,
+                            musicians, vocal performers, and music artists
+                            who want to develop and share their talent.
+                        </p>
+
+                        <p>
+                            We aim to create opportunities for musical
+                            creativity and encourage connections between
+                            performers and entertainment projects.
+                            Whether you are an emerging singer or an
+                            established performer, you can contact us
+                            to discuss your interests and ambitions.
+                        </p>
+
+                        <h4>Areas you can discuss with us</h4>
+                        <ul>
+                            <li>Introducing your singing or music talent.</li>
+                            <li>Discussing music projects and collaborations.</li>
+                            <li>Exploring performance opportunities.</li>
+                            <li>Sharing information about your songs and work.</li>
+                            <li>Discussing ways to present your talent to audiences.</li>
+                        </ul>
+
+                        <div class="service-note">
+                            <strong>Who is this for?</strong>
+                            Singers, vocalists, musicians, songwriters,
+                            and other music creatives.
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ACTING AND FILMS -->
+                <article class="service-detail reveal" id="acting">
+                    <div class="service-icon" aria-hidden="true">🎬</div>
+
+                    <div class="service-content">
+                        <h3>2. Acting, Filmmaking and Movies</h3>
+
+                        <p>
+                            Films and acting bring ideas, characters,
+                            and stories to life. HTM Entertainment welcomes
+                            actors, actresses, filmmakers, scriptwriters,
+                            and other film creatives who are interested
+                            in the entertainment industry.
+                        </p>
+
+                        <p>
+                            We aim to encourage storytelling and
+                            collaboration among people who want to
+                            participate in film-related projects.
+                            Creative projects can be discussed according
+                            to their requirements, available opportunities,
+                            and the skills of the people involved.
+                        </p>
+
+                        <h4>Areas you can discuss with us</h4>
+                        <ul>
+                            <li>Introducing yourself as an actor or actress.</li>
+                            <li>Discussing film and movie project ideas.</li>
+                            <li>Exploring possible casting or acting opportunities.</li>
+                            <li>Connecting with other film creatives.</li>
+                            <li>Sharing acting portfolios, showreels, or previous work.</li>
+                        </ul>
+
+                        <div class="service-note">
+                            <strong>Who is this for?</strong>
+                            Actors, actresses, filmmakers, scriptwriters,
+                            directors, and aspiring film performers.
+                        </div>
+                    </div>
+                </article>
+
+                <!-- COMEDY -->
+                <article class="service-detail reveal" id="comedy">
+                    <div class="service-icon" aria-hidden="true">😂</div>
+
+                    <div class="service-content">
+                        <h3>3. Comedy and Comedians</h3>
+
+                        <p>
+                            Comedy brings people together through laughter,
+                            storytelling, observations, and performance.
+                            We recognize comedians and humorous performers
+                            as important contributors to entertainment.
+                        </p>
+
+                        <p>
+                            HTM Entertainment welcomes comedians who want
+                            to introduce their work, discuss creative
+                            collaborations, and explore opportunities
+                            connected to comedy and entertainment.
+                        </p>
+
+                        <h4>Areas you can discuss with us</h4>
+                        <ul>
+                            <li>Introducing your comedy style and performances.</li>
+                            <li>Discussing comedy shows and entertainment projects.</li>
+                            <li>Exploring possible stage or event opportunities.</li>
+                            <li>Sharing comedy videos and previous performances.</li>
+                            <li>Collaborating on creative entertainment ideas.</li>
+                        </ul>
+
+                        <div class="service-note">
+                            <strong>Who is this for?</strong>
+                            Stand-up comedians, comedy actors, comedy
+                            creators, and humorous performers.
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ARTISTS -->
+                <article class="service-detail reveal" id="artists">
+                    <div class="service-icon" aria-hidden="true">🎨</div>
+
+                    <div class="service-content">
+                        <h3>4. Artists and Creative Talent</h3>
+
+                        <p>
+                            Creativity comes in many forms. Artists use
+                            their abilities, imagination, and personal
+                            styles to create work that inspires people.
+                            We welcome individuals from different artistic
+                            backgrounds who want to share their skills
+                            and explore creative opportunities.
+                        </p>
+
+                        <p>
+                            Our aim is to encourage recognition of creative
+                            talent and help people discuss ways to present
+                            their work, collaborate with others, and take
+                            part in suitable entertainment projects.
+                        </p>
+
+                        <h4>Areas you can discuss with us</h4>
+                        <ul>
+                            <li>Introducing your artistic skills and portfolio.</li>
+                            <li>Discussing creative collaborations.</li>
+                            <li>Exploring ways to showcase your work.</li>
+                            <li>Participating in suitable entertainment projects.</li>
+                            <li>Connecting your creative interests with audiences.</li>
+                        </ul>
+
+                        <div class="service-note">
+                            <strong>Who is this for?</strong>
+                            Creative performers, visual artists, content
+                            creators, and people with other artistic skills.
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SPORTS -->
+                <article class="service-detail reveal" id="sports">
+                    <div class="service-icon" aria-hidden="true">⚽</div>
+
+                    <div class="service-content">
+                        <h3>5. Sports and Sports Players</h3>
+
+                        <p>
+                            Sports develop discipline, teamwork, dedication,
+                            and determination. HTM Entertainment recognizes
+                            sports players as talented individuals whose
+                            achievements and stories can inspire others.
+                        </p>
+
+                        <p>
+                            We welcome sports players who want to introduce
+                            themselves, discuss their sporting journeys,
+                            and explore opportunities for visibility,
+                            collaboration, and sports-related content.
+                        </p>
+
+                        <h4>Areas you can discuss with us</h4>
+                        <ul>
+                            <li>Introducing yourself and your sporting achievements.</li>
+                            <li>Sharing your sporting profile and experience.</li>
+                            <li>Discussing sports-related media and content ideas.</li>
+                            <li>Exploring suitable promotional collaborations.</li>
+                            <li>Discussing potential sports and entertainment projects.</li>
+                        </ul>
+
+                        <div class="service-note">
+                            <strong>Who is this for?</strong>
+                            Athletes, footballers, players from different
+                            sports, and other sporting talents.
+                        </div>
+                    </div>
+                </article>
+
+                <!-- TALENT PROMOTION -->
+                <article class="service-detail reveal" id="promotion">
+                    <div class="service-icon" aria-hidden="true">🌟</div>
+
+                    <div class="service-content">
+                        <h3>6. Talent Promotion and Visibility</h3>
+
+                        <p>
+                            Having talent is important, but introducing
+                            that talent to the right audience can also
+                            make a difference. HTM Entertainment aims to
+                            help talented people discuss ways of presenting
+                            their abilities, creative work, and achievements.
+                        </p>
+
+                        <p>
+                            Depending on the project and agreed arrangements,
+                            talent promotion may involve discussing a
+                            person's public profile, portfolio, creative
+                            content, or opportunities to participate in
+                            suitable entertainment activities.
+                        </p>
+
+                        <h4>Areas you can discuss with us</h4>
+                        <ul>
+                            <li>Preparing information about your talent.</li>
+                            <li>Organizing a portfolio or performer profile.</li>
+                            <li>Discussing content and publicity ideas.</li>
+                            <li>Exploring potential collaborations.</li>
+                            <li>Finding suitable ways to introduce your work to audiences.</li>
+                        </ul>
+
+                        <div class="service-note">
+                            <strong>Who is this for?</strong>
+                            Emerging and established entertainers, artists,
+                            and sports players seeking greater visibility.
+                        </div>
+                    </div>
+                </article>
+
+                <!-- EVENTS AND PROJECTS -->
+                <article class="service-detail reveal" id="events">
+                    <div class="service-icon" aria-hidden="true">🎪</div>
+
+                    <div class="service-content">
+                        <h3>7. Entertainment Projects and Collaborations</h3>
+
+                        <p>
+                            Entertainment projects often bring together
+                            people with different skills. Singers, actors,
+                            comedians, artists, and sports personalities
+                            may all contribute to creative ideas and
+                            public entertainment.
+                        </p>
+
+                        <p>
+                            HTM Entertainment welcomes inquiries from
+                            individuals, businesses, event organizers,
+                            and other creatives who want to discuss
+                            possible partnerships or entertainment concepts.
+                        </p>
+
+                        <h4>Areas you can discuss with us</h4>
+                        <ul>
+                            <li>Proposing an entertainment or creative project.</li>
+                            <li>Discussing possible performer participation.</li>
+                            <li>Exploring event-related collaborations.</li>
+                            <li>Discussing promotional content and creative ideas.</li>
+                            <li>Exploring partnerships with people and organizations.</li>
+                        </ul>
+
+                        <div class="service-note">
+                            <strong>Who is this for?</strong>
+                            Event organizers, businesses, creatives,
+                            performers, and potential collaborators.
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="section process-section">
+
+            <div class="section-heading reveal">
+                <span class="eyebrow">Getting Started</span>
+                <h2>How to Work With HTM Entertainment</h2>
+                <p>
+                    Here is a simple way to start a conversation
+                    about your talent, idea, or project.
+                </p>
+            </div>
+
+            <div class="process-grid">
+
+                <article class="process-card reveal">
+                    <div class="process-number">1</div>
+                    <h3>Contact Us</h3>
+                    <p>
+                        Send us a message explaining who you are and
+                        which service or project interests you.
+                    </p>
+                </article>
+
+                <article class="process-card reveal">
+                    <div class="process-number">2</div>
+                    <h3>Share Your Details</h3>
+                    <p>
+                        Introduce your talent, experience, goals,
+                        or project idea and include relevant work samples
+                        if available.
+                    </p>
+                </article>
+
+                <article class="process-card reveal">
+                    <div class="process-number">3</div>
+                    <h3>Discuss Possibilities</h3>
+                    <p>
+                        Talk with our team about your needs, project
+                        requirements, and whether a collaboration is suitable.
+                    </p>
+                </article>
+
+                <article class="process-card reveal">
+                    <div class="process-number">4</div>
+                    <h3>Agree on Next Steps</h3>
+                    <p>
+                        If there is a suitable opportunity, discuss
+                        responsibilities, timing, and terms before proceeding.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- WHO WE WORK WITH -->
+        <section class="section">
+
+            <div class="section-heading reveal">
+                <span class="eyebrow">Who Can Contact Us?</span>
+                <h2>Our Community</h2>
+                <p>
+                    We welcome inquiries from people and organizations
+                    interested in entertainment, creative work, and sports.
+                </p>
+            </div>
+
+            <div class="audience-grid">
+
+                <article class="audience-card reveal">
+                    <div class="emoji" aria-hidden="true">🎙️</div>
+                    <h3>Emerging Talent</h3>
+                    <p>
+                        People who are developing their skills and want
+                        to introduce their abilities and ambitions.
+                    </p>
+                </article>
+
+                <article class="audience-card reveal">
+                    <div class="emoji" aria-hidden="true">🎭</div>
+                    <h3>Professional Performers</h3>
+                    <p>
+                        Experienced entertainers interested in discussing
+                        new projects or creative collaborations.
+                    </p>
+                </article>
+
+                <article class="audience-card reveal">
+                    <div class="emoji" aria-hidden="true">🤝</div>
+                    <h3>Businesses and Partners</h3>
+                    <p>
+                        Organizations and individuals interested in
+                        discussing possible entertainment partnerships.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section faq-section" id="faq">
+
+            <div class="section-heading reveal">
+                <span class="eyebrow">Frequently Asked Questions</span>
+                <h2>Questions About Our Services</h2>
+                <p>
+                    Here are some useful answers for people interested
+                    in contacting HTM Entertainment.
+                </p>
+            </div>
+
+            <div class="faq-list">
+
+                <div class="faq-item">
+                    <button
+                        class="faq-question"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span>What is HTM Entertainment?</span>
+                        <span aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        HTM Entertainment is an entertainment company based
+                        in Kigali City, Rwanda, with interests in singing,
+                        acting, filmmaking, comedy, creative arts, talent
+                        promotion, and sports.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button
+                        class="faq-question"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span>Who can contact HTM Entertainment?</span>
+                        <span aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Singers, actors, filmmakers, comedians, artists,
+                        sports players, event organizers, businesses, and
+                        potential collaborators can contact us to discuss
+                        their interests and project ideas.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button
+                        class="faq-question"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span>Can new or upcoming artists contact you?</span>
+                        <span aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes. Emerging talent is welcome to introduce
+                        themselves, explain their goals, and share examples
+                        of their work. Any potential opportunity depends
+                        on the project and the arrangements agreed upon.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button
+                        class="faq-question"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span>How can I introduce my talent?</span>
+                        <span aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Visit our Contact Us page and tell us your name,
+                        area of talent, experience, and what you hope to
+                        achieve. You can also explain your project idea
+                        and ask about the next steps.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button
+                        class="faq-question"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span>Do you guarantee jobs or entertainment contracts?</span>
+                        <span aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        No. Contacting us does not guarantee a job,
+                        contract, casting, event appearance, or promotion.
+                        Opportunities depend on availability, suitability,
+                        project requirements, and agreed arrangements.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button
+                        class="faq-question"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span>How do I discuss a partnership?</span>
+                        <span aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Email info@htm.com or use our Contact Us page.
+                        Describe your organization, proposed collaboration,
+                        and what you would like to discuss.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="cta">
+            <h2>Let's Talk About Your Next Idea</h2>
+
+            <p>
+                Whether you have a talent to introduce, a film idea,
+                a comedy project, a sporting profile, or a potential
+                partnership, we welcome you to get in touch with HTM
+                Entertainment in Kigali, Rwanda.
+            </p>
+
+            <a href="contact.html" class="btn">
+                Contact Us Today
+            </a> 
+            <a href="mine1.html" class="btn">
+                Return to the Home Page
+            </a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+
+            <div class="footer-column">
+                <a href="correct.html" class="logo">
+                    HTM <span>Entertainment</span>
+                </a>
+
+                <p style="margin-top: 14px;">
+                    Celebrating talent, creativity, entertainment,
+                    and sports from Kigali, Rwanda, and beyond.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <a href="correct.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Our Services</a>
+                <a href="#faq">Frequently Asked Questions</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact Information</h3>
+
+                <p>
+                    Email:
+                    <a href="mailto:info@htm.com">info@htm.com</a>
+                </p>
+
+                <p>
+                    Phone:
+                    <a href="tel:+250789614808">+250 789 614 808</a>
+                </p>
+
+                <p>
+                    Address: KN 253 Entertainment St,
+                    Kigali City, Rwanda
+                </p>
+
+                <a
+                    href="https://www.instagram.com/htm_entertainment/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Instagram: @htm_entertainment ↗
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            &copy; <span id="copyrightYear"></span>
+            HTM Entertainment. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button
+        id="backToTop"
+        type="button"
+        aria-label="Back to top"
+        title="Back to top"
+    >
+        ↑
+    </button>
+
+    <script>
+        // Automatically update the footer year.
+        document.getElementById("copyrightYear").textContent =
+            new Date().getFullYear();
+
+        // Mobile navigation.
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", function () {
+            const open = navLinks.classList.toggle("open");
+
+            menuToggle.setAttribute("aria-expanded", String(open));
+            menuToggle.setAttribute(
+                "aria-label",
+                open ? "Close navigation menu" : "Open navigation menu"
+            );
+
+            menuToggle.textContent = open ? "✕" : "☰";
+        });
+
+        // Close the menu when a navigation link is selected.
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Open navigation menu");
+                menuToggle.textContent = "☰";
+            });
+        });
+
+        // FAQ accordion.
+        document.querySelectorAll(".faq-question").forEach(function (button) {
+            button.addEventListener("click", function () {
+                const item = button.closest(".faq-item");
+                const answer = item.querySelector(".faq-answer");
+                const isOpen = item.classList.toggle("open");
+
+                button.setAttribute("aria-expanded", String(isOpen));
+                button.querySelector("span:last-child").textContent =
+                    isOpen ? "−" : "+";
+
+                answer.style.display = isOpen ? "block" : "none";
+            });
+        });
+
+        // Back-to-top button.
+        const backToTop = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", function () {
+            backToTop.style.display =
+                window.scrollY > 350 ? "block" : "none";
+        });
+
+        backToTop.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+        // Reveal content as it enters the viewport.
+        const revealElements = document.querySelectorAll(".reveal");
+
+        if ("IntersectionObserver" in window) {
+            const revealObserver = new IntersectionObserver(
+                function (entries, observer) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                {
+                    threshold: 0.1
+                }
+            );
+
+            revealElements.forEach(function (element) {
+                revealObserver.observe(element);
+            });
+        } else {
+            revealElements.forEach(function (element) {
+                element.classList.add("visible");
+            });
+        }
+    </script>
+    
+
+</body>
+</html>

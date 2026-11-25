@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HTM Entertainment Company connects people with music, movies, theatre, comedy, sports, art and games in Rwanda and across Africa.">
+  <title>HABINEZA TETA MARIZA Entertainment Company | Rwanda</title>
+
+  <style>
+    :root {
+      --purple: #38204f;
+      --deep-purple: #241238;
+      --gold: #e6bd52;
+      --light: #f4f6fb;
+      --white: #ffffff;
+      --text: #25213a;
+      --muted: #68647a;
+      --border: #e4e0ed;
+      --radius: 16px;
+      --shadow: 0 8px 24px rgba(35, 15, 60, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1150px, 92%);
+      margin: auto;
+    }
+
+    /* Navigation */
+    .navbar {
+      background: var(--deep-purple);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.18);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.45rem;
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--gold);
+    }
+
+    .logo-icon {
+      font-size: 2.2rem;
+    }
+
+    .logo small {
+      display: block;
+      color: white;
+      font-size: 0.73rem;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.94rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--gold);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 8px;
+      background: transparent;
+      color: white;
+      padding: 8px 12px;
+      font-size: 1.35rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(18, 7, 39, .96),
+        rgba(38, 10, 69, .82), rgba(20, 8, 35, .50)),
+        url("https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1800&q=85")
+        center 48% / cover;
+      padding: 100px 0;
+    }
+
+    .hero-content {
+      max-width: 740px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      line-height: 1.04;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      color: #f0eaf7;
+      margin-bottom: 25px;
+    }
+
+    .hero-tags {
+      font-weight: 700;
+      color: white;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--deep-purple);
+      padding: 13px 23px;
+      border-radius: 30px;
+      font-weight: 800;
+      border: 2px solid var(--gold);
+      transition: transform .2s, background .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #ffdb69;
+    }
+
+    /* General sections */
+    section {
+      padding: 72px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      color: var(--purple);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 8px;
+    }
+
+    .section-heading p {
+      max-width: 700px;
+      margin: auto;
+      color: var(--muted);
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .about-copy h2 {
+      color: var(--purple);
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .about-image {
+      min-height: 300px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(0deg, rgba(25,8,41,.25), transparent),
+        url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=85")
+        center / cover;
+      box-shadow: var(--shadow);
+    }
+
+    /* Services */
+    .services {
+      background: white;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      padding: 27px 20px;
+      border-radius: var(--radius);
+      color: white;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform .2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card .icon {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.15rem;
+    }
+
+    .service-card p {
+      font-size: 0.94rem;
+    }
+
+    .music { background: #8e219f; }
+    .movies { background: #1768cb; }
+    .theatre { background: #d96313; }
+    .comedy { background: #27833b; }
+    .sports { background: #c92736; }
+    .art { background: #087e91; }
+    .games { background: #6230a1; }
+
+    /* Celebrity gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .celebrity-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform .2s;
+    }
+
+    .celebrity-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .celebrity-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      background: #e5deee;
+    }
+
+    .celebrity-info {
+      padding: 16px;
+    }
+
+    .celebrity-info h3 {
+      font-size: 1.04rem;
+      color: var(--purple);
+      margin-bottom: 3px;
+    }
+
+    .celebrity-info p {
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    .category-label {
+      display: inline-block;
+      margin-top: 10px;
+      color: #583080;
+      background: #f0e8fa;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    /* Celebrity table */
+    .directory {
+      background: white;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 13px 15px;
+      border-bottom: 1px solid var(--border);
+      font-size: .93rem;
+    }
+
+    th {
+      background: var(--purple);
+      color: white;
+      font-weight: 700;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f8f5fc;
+    }
+
+    tbody tr:hover {
+      background: #eee5f8;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Artist and actor lists */
+    .lists-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 35px;
+    }
+
+    .list-card {
+      background: #f7f3fc;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 25px;
+    }
+
+    .list-card h3 {
+      color: var(--purple);
+      margin-bottom: 17px;
+      font-size: 1.3rem;
+    }
+
+    .name-list {
+      columns: 2;
+      column-gap: 28px;
+      padding-left: 20px;
+    }
+
+    .name-list li {
+      break-inside: avoid;
+      margin-bottom: 6px;
+      font-size: .92rem;
+    }
+
+    /* Contact */
+    .contact {
+      background: #eee8f5;
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: var(--purple);
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .contact p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--deep-purple);
+      color: white;
+      padding: 30px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: .85rem;
+      color: #c9bdd8;
+      margin-top: 25px;
+    }
+
+    /* Responsive design */
+    @media (max-width: 900px) {
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .nav-links {
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        padding: 20px 5%;
+        background: var(--deep-purple);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        border-top: 1px solid #513765;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      section {
+        padding: 52px 0;
+      }
+
+      .about-grid,
+      .lists-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        min-height: 240px;
+      }
+
+      .service-grid {
+        gap: 13px;
+      }
+
+      .service-card {
+        padding: 22px 12px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+      }
+
+      .celebrity-card img {
+        height: 190px;
+      }
+
+      .celebrity-info {
+        padding: 12px;
+      }
+
+      .name-list {
+        columns: 2;
+        column-gap: 18px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .service-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .celebrity-card img {
+        height: 260px;
+      }
+
+      .name-list {
+        columns: 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="#home" aria-label="HTM Entertainment home">
+        <span class="logo-icon" aria-hidden="true">🎬</span>
+        <span>HABINEZA<small>Entertainment Company</small></span>
+      </a>
+      <a href="workspace/index.html" class="workspace-button">
+        Open Workspace →
+      </a>
+
+      <button class="menu-toggle" id="menuToggle"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="navLinks">
+        ☰
+      </button>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="register.html">Register</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="explore.html">Actions</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">Culture • Talent • Entertainment</span>
+          <h1><span>MARIZA</span><br>Entertainment Company</h1>
+          <p>
+            Bringing people together through creativity, talent and
+            unforgettable entertainment experiences in Rwanda and across Africa.
+          </p>
+          <div class="hero-tags">
+            Music &nbsp;•&nbsp; Movies &nbsp;•&nbsp; Theatre &nbsp;•&nbsp;
+            Comedy &nbsp;•&nbsp; Sports &nbsp;•&nbsp; Art &nbsp;•&nbsp; Games
+          </div>
+          <a href="#services" class="btn">Explore Our Services →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <span class="eyebrow">Welcome to HABINEZA TETA MARIZA</span>
+          <h2>Celebrating Entertainment in Rwanda</h2>
+          <p>
+            HTM Entertainment Company celebrates the creativity and talent
+            found in Rwanda and throughout Africa.
+          </p>
+          <p>
+            From music events and film screenings to theatre, comedy,
+            sports, art exhibitions and games, our goal is to connect
+            audiences with exciting entertainment experiences.
+          </p>
+          <a class="btn" href="#gallery">Discover Our Talent →</a>
+        </div>
+        <div class="about-image"
+             role="img"
+             aria-label="Live entertainment event with an audience"></div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Our Entertainment Services</h2>
+          <p>
+            Discover a wide range of entertainment activities for
+            audiences, families, artists and communities.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card music">
+            <div class="icon" aria-hidden="true">🎵</div>
+            <h3>Music</h3>
+            <p>Live concerts, music events and festivals.</p>
+          </article>
+
+          <article class="service-card movies">
+            <div class="icon" aria-hidden="true">🎬</div>
+            <h3>Movies</h3>
+            <p>Film screenings, movie releases and film festivals.</p>
+          </article>
+
+          <article class="service-card theatre">
+            <div class="icon" aria-hidden="true">🎭</div>
+            <h3>Theatre</h3>
+            <p>Live performances, drama and stage plays.</p>
+          </article>
+
+          <article class="service-card comedy">
+            <div class="icon" aria-hidden="true">😂</div>
+            <h3>Comedy Shows</h3>
+            <p>Comedy performances and laughter-filled events.</p>
+          </article>
+
+          <article class="service-card sports">
+            <div class="icon" aria-hidden="true">⚽</div>
+            <h3>Sports Center</h3>
+            <p>Sports activities, competitions and sporting events.</p>
+          </article>
+
+          <article class="service-card art">
+            <div class="icon" aria-hidden="true">🎨</div>
+            <h3>Art Exhibitions</h3>
+            <p>Discover artwork, creativity and local artists.</p>
+          </article>
+
+          <article class="service-card games">
+            <div class="icon" aria-hidden="true">🎮</div>
+            <h3>Games</h3>
+            <p>Fun games, gaming activities and competitions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Celebrity Gallery -->
+    <section id="gallery">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Celebrity Achivements</h2>
+          <p>
+            Meet some of the singers, actors, comedians, players and
+            creative talents associated with Rwanda's entertainment scene.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <article class="celebrity-card">
+            <img
+              src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=600&q=80"
+              alt="Live music concert"
+              loading="lazy">
+            <div class="celebrity-info">
+              <h3>Bruce Melodie</h3>
+              <p>Rwandan singer</p>
+              <span class="category-label">Music</span>
+            </div>
+          </article>
+
+          <article class="celebrity-card">
+            <img
+              src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=600&q=80"
+              alt="Singer performing on stage"
+              loading="lazy">
+            <div class="celebrity-info">
+              <h3>Butera Knowless</h3>
+              <p>Rwandan singer</p>
+              <span class="category-label">Music</span>
+            </div>
+          </article>
+
+          <article class="celebrity-card">
+            <img
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80"
+              alt="Portrait of a man"
+              loading="lazy">
+            <div class="celebrity-info">
+              <h3>Ncuti Gatwa</h3>
+              <p>Actor</p>
+              <span class="category-label">Film</span>
+            </div>
+          </article>
+
+          <article class="celebrity-card">
+            <img
+              src="https://images.unsplash.com/photo-1585699324551-f6c309eedeca?auto=format&fit=crop&w=600&q=80"
+              alt="Theatre performance"
+              loading="lazy">
+            <div class="celebrity-info">
+              <h3>Bamenya</h3>
+              <p>Comedian</p>
+              <span class="category-label">Comedy</span>
+            </div>
+          </article>
+
+          <article class="celebrity-card">
+            <img
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
+              alt="Portrait of a woman"
+              loading="lazy">
+            <div class="celebrity-info">
+              <h3>Malaika Uwamahoro</h3>
+              <p>Actress and performing artist</p>
+              <span class="category-label">Acting</span>
+            </div>
+          </article>
+
+          <article class="celebrity-card">
+            <img
+              src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=600&q=80"
+              alt="Football match"
+              loading="lazy">
+            <div class="celebrity-info">
+              <h3>Kevin Muhire</h3>
+              <p>Football player</p>
+              <span class="category-label">Sports</span>
+            </div>
+          </article>
+
+          <article class="celebrity-card">
+            <img
+              src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=600&q=80"
+              alt="Artist performing"
+              loading="lazy">
+            <div class="celebrity-info">
+              <h3>Epa Binamungu</h3>
+              <p>Artist</p>
+              <span class="category-label">Art</span>
+            </div>
+          </article>
+
+          <article class="celebrity-card">
+            <img
+              src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80"
+              alt="Entertainment event"
+              loading="lazy">
+            <div class="celebrity-info">
+              <h3>Rwanda's Talent</h3>
+              <p>Celebrating local creativity</p>
+              <span class="category-label">Community</span>
+            </div>
+          </article>
+        </div>
+
+        <p style="margin-top:18px; color:#68647a; font-size:.88rem;">
+          Gallery note: the images above are illustrative placeholders,
+          not verified photographs of the named people. Replace them with
+          authorized celebrity photographs before publishing.
+        </p>
+      </div>
+    </section>
+
+    <!-- Celebrity Table -->
+    <section class="directory" id="celebrities">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Rwandan Celebrities in Entertainment</h2>
+          <p>
+            A directory of names across music, acting, comedy, sports and art.
+          </p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Singers</th>
+                <th>Actors</th>
+                <th>Comedians</th>
+                <th>Players</th>
+                <th>Artists</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Bruce Melodie</td>
+                <td>Nshuti Savio</td>
+                <td>Nyaxo</td>
+                <td>Kevin Muhire</td>
+                <td>Epa Binamungu</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Meddy</td>
+                <td>Nadege Umutesi</td>
+                <td>Bamenya</td>
+                <td>Kenny Gasana</td>
+                <td>Mupenzi Francis</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>The Ben</td>
+                <td>Fabiola Umutoni</td>
+                <td>Rusine Patrick</td>
+                <td>William Robeyns</td>
+                <td>Element Eleée</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Ariel Wayz</td>
+                <td>Malaika Uwamahoro</td>
+                <td>Patyno</td>
+                <td>Jean-Jacques Nshobozwabyosenumukiza</td>
+                <td>Innocent Nkurunziza</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Butera Knowless</td>
+                <td>Kanyombya</td>
+                <td>Merci</td>
+                <td>Ernest Sugira</td>
+                <td>Teta Chel</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Kenny Sol</td>
+                <td>Ndimbati (Karekezi)</td>
+                <td>Umuhinde</td>
+                <td>Innocent Nshuti</td>
+                <td>Medard Bizimana</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Christopher Muneza</td>
+                <td>Malaika Nyanzi</td>
+                <td>Nyaxe</td>
+                <td>Olivier Niyonzima</td>
+                <td>Birasa Bernard</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Singer and actor lists -->
+        <div class="lists-grid">
+          <article class="list-card">
+            <h3>🎵 List of Singers in Rwanda</h3>
+            <ul class="name-list">
+              <li>Bruce Melodie</li>
+              <li>Meddy</li>
+              <li>The Ben</li>
+              <li>King James</li>
+              <li>Juno Kizigenza</li>
+              <li>Israel Mbonyi</li>
+              <li>Kenny Sol</li>
+              <li>Christopher Muneza</li>
+              <li>Andy Bumuntu</li>
+              <li>Nel Ngabo</li>
+              <li>Chriss Eazy</li>
+              <li>Niyo Bosco</li>
+              <li>Tom Close</li>
+              <li>Social Mula</li>
+              <li>Yvan Buravan</li>
+              <li>Butera Knowless</li>
+              <li>Bwiza</li>
+              <li>Ariel Wayz</li>
+              <li>Alyn Sano</li>
+              <li>Charly na Nina</li>
+              <li>Ish Kevin</li>
+              <li>Bushali</li>
+              <li>Riderman</li>
+              <li>Jay Polly</li>
+              <li>Bull Dogg</li>
+              <li>Diplomate</li>
+              <li>Angell Mutoni</li>
+              <li>Teta Diana</li>
+              <li>Vestine and Dorcas</li>
+              <li>Aline Gahongayire</li>
+              <li>James &amp; Daniella</li>
+            </ul>
+          </article>
+
+          <article class="list-card">
+            <h3>🎭 List of Actors in Rwanda</h3>
+            <ul class="name-list">
+              <li>Ncuti Gatwa</li>
+              <li>Eliane Umuhire</li>
+              <li>Didier Kamanzi</li>
+              <li>Bahavu Jeannette</li>
+              <li>Mukakamanzi Beatha</li>
+              <li>Willy Ndahiro</li>
+              <li>Malaika Uwamahoro</li>
+              <li>Sonia Rolland</li>
+              <li>Arthur Nkusi</li>
+              <li>Denis Nsanzamahoro</li>
+              <li>Carole Karemera</li>
+              <li>Nadege Uwamwezi</li>
+              <li>Mutoni Assia</li>
+              <li>Damour Selemani</li>
+              <li>Emmanuel Ndayizeye</li>
+              <li>Ernest Kalisa</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <span class="eyebrow">Let's work together</span>
+        <h2>Celebrate Talent. Create Experiences.</h2>
+        <p>
+          Interested in entertainment, events or collaboration?
+          Contact HTM Entertainment Company to discuss your ideas.
+        </p>
+        <!-- Replace this link with your real email or contact page. -->
+        <a class="btn" href="mailto:info@yourcompany.com">
+          Contact Our Team →
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a class="logo" href="#home">
+          <span class="logo-icon" aria-hidden="true">🎬</span>
+          <span>HTM<small>Entertainment Company</small></span>
+        </a>
+
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#celebrities">Celebrities</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <p class="copyright">
+        &copy; <span id="date"></span> HTM Entertainment Company.
+        All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation menu
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    // Close the mobile menu after selecting a link
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Keep the copyright year up to date
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>

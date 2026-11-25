@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTM Entertainment | Registration</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f1fa;
+            color: #282139;
+        }
+
+        header {
+            background: #241238;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        header h1 {
+            color: #e6bd52;
+            margin-bottom: 8px;
+        }
+
+        nav {
+            background: #38204f;
+            padding: 14px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 750px;
+            margin: 35px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px #00000015;
+        }
+
+        h2 {
+            color: #54218c;
+            text-align: center;
+        }
+
+        .intro {
+            text-align: center;
+            line-height: 1.6;
+            color: #61576c;
+        }
+
+        label {
+            display: block;
+            margin-top: 17px;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cfc6dc;
+            border-radius: 7px;
+            font-size: 16px;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: 2px solid #a47bd1;
+            border-color: #54218c;
+        }
+
+        .optional {
+            color: #6d6379;
+            font-weight: normal;
+        }
+
+        .form-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        button {
+            flex: 1;
+            min-width: 150px;
+            padding: 13px;
+            border: none;
+            border-radius: 7px;
+            background: #54218c;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #d4a72c;
+            color: #241238;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            color: #54218c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #result {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f8ed;
+            border-radius: 8px;
+            line-height: 1.5;
+        }
+
+        footer {
+            background: #241238;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 20px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>HTM Entertainment Company</h1>
+    <p>Your Talent, Our Passion, Our Future</p>
+</header>
+
+<main class="container">
+    <h2>Registration and Requests</h2>
+
+    <p class="intro">
+        Welcome to HTM Entertainment Company!
+        Complete this form to join our team, apply to become a star,
+        request to meet an artist, or contact our company.
+    </p>
+
+    <form id="registrationForm">
+
+        <label for="activity">What would you like to do?</label>
+        <select id="activity" name="activity" required>
+            <option value="">-- Select an option --</option>
+            <option value="member">Become a Member</option>
+            <option value="star">Become a Star</option>
+            <option value="meet">Meet a Star</option>
+            <option value="contact">Contact the Company</option>
+        </select>
+
+        <label for="fullname">Full Name</label>
+        <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Enter your full name"
+            autocomplete="name"
+            required
+        >
+
+        <label for="email">Email Address</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@email.com"
+            autocomplete="email"
+            required
+        >
+
+        <label for="phone">Telephone Number</label>
+        <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Enter your phone number"
+            autocomplete="tel"
+            required
+        >
+
+        <label for="address">
+            Address or City <span class="optional">(optional)</span>
+        </label>
+        <input
+            type="text"
+            id="address"
+            name="address"
+            placeholder="Enter your city or address"
+            autocomplete="street-address"
+        >
+
+        <div id="memberFields" hidden>
+            <label for="memberInterest">Membership Interest</label>
+            <select id="memberInterest" name="memberInterest">
+                <option value="">Choose your interest</option>
+                <option value="events">Events and Concerts</option>
+                <option value="management">Artist Management</option>
+                <option value="marketing">Marketing and Promotion</option>
+                <option value="production">Music and Video Production</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div id="starFields" hidden>
+            <label for="talent">What is your talent?</label>
+            <select id="talent" name="talent">
+                <option value="">Choose your talent</option>
+                <option value="singing">Singing</option>
+                <option value="acting">Acting</option>
+                <option value="dancing">Dancing</option>
+                <option value="comedy">Comedy</option>
+                <option value="modeling">Modeling</option>
+                <option value="presenting">Presenting</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="experience">Tell us about your experience</label>
+            <textarea
+                id="experience"
+                name="experience"
+                placeholder="Describe your talent and experience"
+            ></textarea>
+
+            <label for="portfolio">
+                Audition video or portfolio link
+                <span class="optional">(optional)</span>
+            </label>
+            <input
+                type="url"
+                id="portfolio"
+                name="portfolio"
+                placeholder="https://example.com"
+            >
+        </div>
+
+        <div id="meetFields" hidden>
+            <label for="starName">Which star would you like to meet?</label>
+            <input
+                type="text"
+                id="starName"
+                name="starName"
+                placeholder="Enter the artist's name"
+            >
+
+            <label for="meetDate">Preferred Meeting Date</label>
+            <input
+                type="date"
+                id="meetDate"
+                name="meetDate"
+            >
+
+            <label for="meetReason">Reason for the meeting</label>
+            <textarea
+                id="meetReason"
+                name="meetReason"
+                placeholder="Tell us why you would like to meet the artist"
+            ></textarea>
+        </div>
+
+        <div id="contactFields" hidden>
+            <label for="contactSubject">Subject</label>
+            <input
+                type="text"
+                id="contactSubject"
+                name="contactSubject"
+                placeholder="What is your message about?"
+            >
+        </div>
+
+        <label for="message">
+            Additional Message <span class="optional">(optional)</span>
+        </label>
+        <textarea
+            id="message"
+            name="message"
+            placeholder="Write any additional information here"
+        ></textarea>
+
+        <div class="form-buttons">
+            <button type="submit">Submit Registration</button>
+            <button type="reset">Clear Form</button>
+        </div>
+    </form>
+
+    <div id="result" role="status" aria-live="polite"></div>
+
+    <a href="mine1.html" class="back-button">
+        &larr; Return to the Home Page
+    </a>
+</main>
+
+<footer>
+    <p>&copy; <span id="year"></span> HTM Entertainment Company.</p>
+    <p>All rights reserved.</p>
+</footer>
+
+<script>
+    const activity = document.getElementById("activity");
+    const form = document.getElementById("registrationForm");
+    const result = document.getElementById("result");
+
+    const sections = {
+        member: document.getElementById("memberFields"),
+        star: document.getElementById("starFields"),
+        meet: document.getElementById("meetFields"),
+        contact: document.getElementById("contactFields")
+    };
+
+    const pageType = new URLSearchParams(
+        window.location.search
+    ).get("type");
+
+    function updateFields() {
+        Object.keys(sections).forEach(function (key) {
+            const section = sections[key];
+            const isVisible = activity.value === key;
+
+            section.hidden = !isVisible;
+
+            section.querySelectorAll("input, select, textarea")
+                .forEach(function (field) {
+                    field.required = false;
+                    field.disabled = !isVisible;
+                });
+        });
+
+        if (activity.value === "member") {
+            document.getElementById("memberInterest").required = true;
+        }
+
+        if (activity.value === "star") {
+            document.getElementById("talent").required = true;
+        }
+
+        if (activity.value === "meet") {
+            document.getElementById("starName").required = true;
+            document.getElementById("meetReason").required = true;
+        }
+
+        if (activity.value === "contact") {
+            document.getElementById("contactSubject").required = true;
+        }
+
+        result.style.display = "none";
+    }
+
+    activity.addEventListener("change", updateFields);
+
+    if (["member", "star", "meet", "contact"].includes(pageType)) {
+        activity.value = pageType;
+    }
+
+    updateFields();
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const selectedOption =
+            activity.options[activity.selectedIndex].text;
+
+        result.textContent =
+            "Thank you, " +
+            document.getElementById("fullname").value +
+            "! Your form has passed the browser's checks for: " +
+            selectedOption +
+            ". This demonstration has not sent or saved your registration. " +
+            "Connect the form to a secure backend or form service to receive submissions.";
+
+        result.style.display = "block";
+        result.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+
+    form.addEventListener("reset", function () {
+        setTimeout(function () {
+            updateFields();
+            result.style.display = "none";
+        }, 0);
+    });
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+</script>
+
+</body>
+</html>

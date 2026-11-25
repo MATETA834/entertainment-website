@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | HTM Entertainment</title>
+
+    <style>
+        :root {
+            --purple: #351052;
+            --deep-purple: #501792;
+            --gold: #b8a923;
+            --light: #f4f6fb;
+            --white: #ffffff;
+            --text: #25213a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* Header */
+        header {
+            background: var(--purple);
+            color: var(--white);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            box-shadow: 0 4px 15px #0002;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: var(--gold);
+            letter-spacing: 1px;
+        }
+
+        header nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(
+                135deg,
+                var(--purple),
+                var(--deep-purple)
+            );
+            color: var(--white);
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 46px);
+            margin-bottom: 12px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #eee7f7;
+        }
+
+        /* Main layout */
+        .container {
+            width: min(1100px, 90%);
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px #35105212;
+            border: 1px solid #e9e4f0;
+        }
+
+        .card h2 {
+            color: var(--purple);
+            margin-bottom: 10px;
+            font-size: 25px;
+        }
+
+        .subtitle {
+            color: #6c6879;
+            margin-bottom: 25px;
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: var(--text);
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #d9d4e2;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            background: #fcfbfe;
+            color: var(--text);
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--deep-purple);
+            box-shadow: 0 0 0 3px #5017921a;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: var(--deep-purple);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--purple);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #form-status {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            display: none;
+            overflow-wrap: anywhere;
+        }
+
+        #form-status.success {
+            display: block;
+            background: #e8f7ed;
+            color: #176b36;
+        }
+
+        #form-status.error {
+            display: block;
+            background: #fff0f0;
+            color: #a32121;
+        }
+
+        /* Contact information */
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 18px 0;
+            border-bottom: 1px solid #eeeaf3;
+        }
+
+        .contact-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            background: #f0e7fa;
+            color: var(--deep-purple);
+            width: 45px;
+            height: 45px;
+            min-width: 45px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            font-size: 21px;
+        }
+
+        .contact-item h3 {
+            color: var(--purple);
+            font-size: 16px;
+        }
+
+        .contact-item p,
+        .contact-item a {
+            color: #6c6879;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-item a:hover {
+            color: var(--deep-purple);
+        }
+
+        .social-title {
+            margin-top: 22px;
+            color: var(--purple);
+        }
+
+        .social-link {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 18px;
+            background: #f0e7fa;
+            color: var(--deep-purple);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--deep-purple);
+            color: var(--white);
+        }
+
+        /* Navigation buttons */
+        .page-navigation {
+            text-align: center;
+            padding: 0 20px 50px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 11px 24px;
+            border-radius: 8px;
+            background: var(--purple);
+            color: var(--white);
+            transition: background 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: var(--deep-purple);
+        }
+
+        .nav-btn.back {
+            background: transparent;
+            color: var(--purple);
+            border: 1px solid var(--purple);
+        }
+
+        .nav-btn.back:hover {
+            background: var(--purple);
+            color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background: #241035;
+            color: #ddd4e7;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        footer .logo {
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 760px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            header nav {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                margin: 30px auto;
+            }
+
+            .hero {
+                padding: 45px 18px;
+            }
+
+            .card {
+                padding: 22px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">HTM Entertainment</div>
+
+        <nav aria-label="Main navigation">
+            <a href="mine1.html">Back HOME</a>
+            <a href="#contact-info">Information</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Contact <span>Us</span></h1>
+        <p>
+            Have a question, idea, or inquiry?
+            We would love to hear from you.
+            Send us a message or contact us directly.
+        </p>
+    </section>
+
+    <!-- Main content -->
+    <main class="container">
+
+        <!-- Contact form -->
+        <section class="card" id="contact-form">
+            <h2>Send Us a Message</h2>
+            <p class="subtitle">
+                Fill in the form below and tell us how we can help.
+            </p>
+
+            <form id="contactForm" action="submit_form.php" method="post">
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        maxlength="100"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        maxlength="254"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Write your message here..."
+                        maxlength="5000"
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    Send Message
+                </button>
+
+                <div
+                    id="form-status"
+                    role="status"
+                    aria-live="polite"
+                ></div>
+
+            </form>
+        </section>
+
+        <!-- Contact details -->
+        <aside class="card" id="contact-info">
+            <h2>Contact Information</h2>
+            <p class="subtitle">
+                You can also reach us using the details below.
+            </p>
+
+            <div class="contact-item">
+                <div class="contact-icon" aria-hidden="true">✉</div>
+                <div>
+                    <h3>Email Address</h3>
+                    <p>
+                        <a href="mailto:info@htm.com">
+                            habinezamateta@gmail.com
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon" aria-hidden="true">☎</div>
+                <div>
+                    <h3>Phone Number</h3>
+                    <p>
+                        <a href="tel:+250789614808">
+                            +(250) 789 614 808
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon" aria-hidden="true">⌖</div>
+                <div>
+                    <h3>Our Address</h3>
+                    <p>
+                        KN 253 Entertainment St,<br>
+                        Kigali City, Rwanda
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="social-title">Follow Us on Social Media</h3>
+
+            <a
+                class="social-link"
+                href="https://www.instagram.com/real.ma_teta/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Instagram ↗
+            </a>
+        </aside>
+
+    </main>
+
+    <!-- Navigation -->
+    <nav class="page-navigation" aria-label="Page navigation">
+        <a href="correct.html" class="nav-btn">⌂ Home</a>
+        <a href="javascript:history.back()" class="nav-btn back">
+            ← Back
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo">HTM Entertainment</div>
+        <p>Connecting with you is important to us.</p>
+        <p>&copy; <span id="year"></span> HTM Entertainment. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Automatically update the copyright year
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        // Contact form interaction
+        const contactForm = document.getElementById("contactForm");
+        const submitBtn = document.getElementById("submitBtn");
+        const formStatus = document.getElementById("form-status");
+
+        contactForm.addEventListener("submit", function (event) {
+            // Let the browser validate the required fields first.
+            if (!contactForm.checkValidity()) {
+                return;
+            }
+
+            // The form uses a PHP backend to send the message.
+            // Do not claim success until the server confirms it.
+            event.preventDefault();
+
+            formStatus.className = "";
+            formStatus.style.display = "none";
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Sending...";
+
+            fetch(contactForm.action, {
+                method: "POST",
+                body: new FormData(contactForm),
+                headers: {
+                    "Accept": "application/json"
+                }
+            })
+            .then(async function (response) {
+                const result = await response.json().catch(() => ({}));
+
+                if (!response.ok || result.success !== true) {
+                    throw new Error(
+                        result.message ||
+                        "Your message could not be sent. Please try again."
+                    );
+                }
+
+                formStatus.textContent =
+                    result.message || "Your message was sent successfully!";
+                formStatus.className = "success";
+                contactForm.reset();
+            })
+            .catch(function (error) {
+                formStatus.textContent =
+                    error.message ||
+                    "Unable to send your message. Please try again later.";
+                formStatus.className = "error";
+            })
+            .finally(function () {
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Send Message";
+                formStatus.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest"
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
