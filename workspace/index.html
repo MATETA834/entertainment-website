@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Workspace | HTM entertainment AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app" id="app">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="../index.html">
+        <span class="brand-icon">✳</span>
+        <span>HTM Entertainment AI</span>
+      </a>
+
+      <button class="new-chat" id="newChat">
+        <span>＋</span> New chat
+        <span class="shortcut">⌘ K</span>
+      </button>
+
+      <nav class="nav">
+        <p class="nav-label">WORKSPACE</p>
+        <button class="nav-item active" data-page="chat">◉ <span>AI Chat</span></button>
+        <button class="nav-item" data-page="explore">✧ <span>Explore tools</span></button>
+        <button class="nav-item" data-page="projects">▦ <span>Projects</span></button>
+        <button class="nav-item" data-page="files">▤ <span>My files</span></button>
+
+        <p class="nav-label">RECENT CHATS</p>
+        <div id="historyList" class="history-list"></div>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <!-- BACK TO HOME -->
+        <a href="../mine1.html" class="nav-item">
+          ← <span>Back to Home</span>
+        </a>
+
+        <button class="nav-item" data-page="settings">
+          ⚙ <span>Settings</span>
+        </button>
+
+        <button class="nav-item" data-page="help">
+          ? <span>Help center</span>
+        </button>
+
+        <div class="account">
+          <div class="avatar">N</div>
+          <div class="account-info">
+            <strong>My workspace</strong>
+            <small>Personal account</small>
+          </div>
+          <button class="icon-btn" id="themeToggle" title="Toggle theme">◐</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn mobile-menu" id="menuToggle"
+          aria-label="Toggle navigation">☰</button>
+        <div class="breadcrumbs">
+          <span>Workspace</span><span class="muted">/</span>
+          <strong id="pageCrumb">AI Chat</strong>
+        </div>
+        <div class="top-actions">
+          <span class="status"><span></span> Workspace ready</span>
+          <button class="icon-btn" id="topNewChat" title="New chat">＋</button>
+        </div>
+      </header>
+
+      <section id="pageContent" class="page-content">
+        <!-- JavaScript renders the selected workspace page here. -->
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
